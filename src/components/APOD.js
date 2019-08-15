@@ -25,19 +25,34 @@ function APOD() {
     }, [])
 
     return(
-        <div className='APOD'>
-            <header>
-                <h1>Astronomy Picture of the Day</h1>
-            </header>
-            <img src= {apodData} alt={title}/>
-            <div className='attributes'>
-                <h2>{title}</h2>
-                <h3>{date}</h3>
+        // <div className='APOD'>
+        //     <header>
+        //         <h1>Astronomy Picture of the Day</h1>
+        //     </header>
+        //     <img src= {apodData} alt={title}/>
+        //     <div className='attributes'>
+        //         <h2>{title}</h2>
+        //         <h3>{date}</h3>
+        //     </div>
+        //     <div className='caption'>
+        //         <p>{caption}</p>
+        //     </div>
+        // </div>
+
+            <div class="ui card">
+                <div class="image">
+                    <img src={apodData} alt={title}/>
+                </div>
+                <div class="content">
+                    <a class="header">{title}</a>
+                    <div class="meta">
+                        <span class="date">{date}</span>
+                    </div>
+                    <div class="description">
+                        {caption}
+                    </div>
+                </div>
             </div>
-            <div className='caption'>
-                <p>{caption}</p>
-            </div>
-        </div>
     )
 }
 
