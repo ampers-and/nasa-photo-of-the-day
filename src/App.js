@@ -1,14 +1,12 @@
 import React from "react";
 import "./App.css";
 import APOD from './components/APOD';
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <Header/>
       <APOD/>
     </div>
   );

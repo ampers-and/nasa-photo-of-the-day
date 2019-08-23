@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Card, Image } from 'semantic-ui-react'
 
 function APOD() {
     const [apodData, setApodData] = useState('');
@@ -25,19 +26,32 @@ function APOD() {
     }, [])
 
     return(
-        <div className='APOD'>
-            <header>
-                <h1>Astronomy Picture of the Day</h1>
-            </header>
-            <img src= {apodData} alt={title}/>
-            <div className='attributes'>
-                <h2>{title}</h2>
-                <h3>{date}</h3>
-            </div>
-            <div className='caption'>
-                <p>{caption}</p>
-            </div>
-        </div>
+        // <div className='APOD'>
+        //     <header>
+        //         <h1>Astronomy Picture of the Day</h1>
+        //     </header>
+        //     <img src= {apodData} alt={title}/>
+        //     <div className='attributes'>
+        //         <h2>{title}</h2>
+        //         <h3>{date}</h3>
+        //     </div>
+        //     <div className='caption'>
+        //         <p>{caption}</p>
+        //     </div>
+        // </div>
+
+        <Card fluid>
+        <Image src={apodData} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{title}</Card.Header>
+          <Card.Meta>
+            <span className='date'>{date}</span>
+          </Card.Meta>
+          <Card.Description>
+            {caption}
+          </Card.Description>
+        </Card.Content>
+      </Card>
     )
 }
 

@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+.ui.fluid.card{
+  width:90% !important;
+  margin:2% auto;
+}
